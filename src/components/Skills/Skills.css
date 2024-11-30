@@ -1,0 +1,52 @@
+.skills-section h2 {
+  font-size: 24px;
+  text-align: center;
+}
+
+.skills-lists {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 250px;
+  /* background: #000; */
+}
+
+/* Wrapper for items */
+.skills-container {
+  display: flex;
+  gap: 20px;
+  animation: scrollLeft 20s linear infinite;
+  white-space: nowrap;
+}
+
+/* Individual items */
+.skill-item {
+  flex: 0 0 auto;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  min-width: 250px;
+  text-align: center;
+  background-image: linear-gradient(60deg, #abecd6 0%, #fbed96 100%);
+}
+
+/* Icon styles */
+.icon {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+/* Animation to move items from right to left */
+@keyframes scrollLeft {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+/* Repeat items for seamless scroll */
+.skills-container:hover {
+  animation-play-state: paused; /* Pause on hover */
+}

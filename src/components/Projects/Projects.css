@@ -1,0 +1,119 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+/* Projects Section */
+.projects-section {
+  padding: 50px;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+.project-info {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.project-info h1 {
+  font-size: 2.5rem;
+  color: var(--heading-color);
+}
+
+.project-info p {
+  font-size: 1.2rem;
+  color: var(--secondary-color);
+  margin-top: 10px;
+}
+
+/* Project Cards Grid */
+.projects-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Project Card */
+.project-card {
+  background: var(--background-color);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: var(--box-shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease,
+    background-color 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+.project-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.project-details {
+  padding: 20px;
+  text-align: center;
+}
+
+.project-details h2 {
+  font-size: 1.5rem;
+  color: var(--text-color);
+  margin-bottom: 10px;
+}
+
+.project-details p {
+  font-size: 1rem;
+  color: var(--text-color);
+  margin-bottom: 15px;
+}
+
+.view-project-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  border: 1px solid var(--border-color);
+  background: var(--primary-color);
+  color: var(--text-color2);
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.view-project-btn:hover {
+  background: var(--box-hover-color);
+  transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .project-info h1 {
+    font-size: 2rem;
+  }
+
+  .project-info p {
+    font-size: 1rem;
+  }
+
+  .project-card img {
+    height: 150px;
+  }
+
+  .project-details h2 {
+    font-size: 1.3rem;
+  }
+}

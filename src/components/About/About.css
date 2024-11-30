@@ -1,0 +1,165 @@
+:root {
+  --primary-color: #181818;
+  --secondary-color: #6c757d;
+  --background-color: #f8f9fa;
+  --border-color: #dee2e6;
+  --heading-color: #333;
+  --text-color: #555;
+  --text-color2: #fff;
+  --box-color: #1e201e;
+  --box-hover-color: #3c3d37;
+  --box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", Arial, sans-serif;
+  background-color: var(--background-color);
+}
+
+.about-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.about-section h1 {
+  text-align: center;
+  font-size: 3rem;
+  margin: 20px 0;
+  color: var(--heading-color);
+}
+
+.about-section .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.container .profile-picture {
+  width: 500px;
+  border-radius: 10%;
+  margin: 10px;
+  box-shadow: var(--box-shadow);
+  overflow: hidden;
+}
+
+.container .profile-picture:hover {
+  box-shadow: var(--box-shadow) 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.container .profile-picture img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10%;
+  background-color: #f8f9fa;
+}
+
+.container .content-container {
+  width: 50%;
+  padding: 20px;
+}
+
+.container .content-container p {
+  font-size: 1.2rem;
+  color: var(--text-color);
+  text-align: center;
+}
+
+.skills-interests {
+  text-align: center;
+  padding: 40px;
+}
+
+.skills-interests h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin: 20px 0 0;
+  color: var(--text-color);
+}
+
+.skills-wrapper,
+.interests-wrapper {
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+}
+
+.skills-list,
+.interests-list {
+  display: inline-flex;
+  animation: slideLoop 20s linear infinite;
+}
+
+.interests-list {
+  animation-direction: reverse;
+}
+
+.skills-list:hover,
+.interests-list:hover {
+  animation-play-state: paused;
+}
+
+.skill,
+.interest {
+  padding: 10px 20px;
+  width: 180px;
+  background-color: var(--box-color);
+  color: var(--text-color2);
+  margin: 10px 15px;
+  border-radius: 8px;
+  display: inline-block;
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 0.5s ease;
+  border: 5px solid var(--text-color2);
+  box-shadow: var(--box-shadow);
+}
+
+@keyframes slideLoop {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 768px) {
+  .about-section h1 {
+    font-size: 2rem;
+  }
+
+  .about-section .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .container .content-container {
+    width: 90%;
+  }
+
+  .container .profile-picture {
+    width: 300px;
+    margin: 10px;
+  }
+
+  .container .content-container p {
+    font-size: 1rem;
+  }
+
+  .skills-interests {
+    text-align: center;
+    padding: 10px;
+  }
+  .skills-interests h2 {
+    font-size: 1.5rem;
+  }
+}

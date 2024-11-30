@@ -1,0 +1,124 @@
+.contact-section {
+  padding: 50px;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.contact-info h1 {
+  font-size: 2.5rem;
+  color: var(--header-color);
+}
+
+.contact-info p {
+  font-size: 1.2rem;
+  color: var(--text-color);
+  margin-top: 10px;
+  margin-bottom: 40px;
+}
+
+/* Form Container */
+.contact-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+/* Contact Form */
+.contact-form {
+  width: 400px;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+.form-input,
+.form-textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  background: var(--background-color);
+  color: var(--text-color2);
+  font-size: 1rem;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+  outline: none;
+  border-color: var(--box-hover-color);
+  box-shadow: 0 0 5px var(--box-hover-color);
+}
+
+.form-button {
+  padding: 10px 20px;
+  background-color: var(--box-color);
+  color: var(--text-color2);
+  border: none;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.form-button:hover {
+  background-color: var(--box-hover-color);
+  color: var(--text-color2);
+  transform: scale(1.05);
+}
+
+.contact-form .social-links-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.social-links-container a .icon {
+  font-size: 2rem;
+  margin: 0 10px;
+  color: var(--secondary-color);
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.social-links-container a .icon:hover {
+  color: var(--text-color);
+  transform: scale(1.2);
+}
+
+.img-container {
+  width: 500px;
+  height: 500px;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.img-container img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  filter: var(--image-filter);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .contact-info h1 {
+    font-size: 2rem;
+  }
+
+  .contact-info p {
+    font-size: 1rem;
+  }
+
+  .contact-container {
+    flex-direction: column;
+  }
+}

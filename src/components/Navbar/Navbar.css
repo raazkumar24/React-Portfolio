@@ -1,0 +1,123 @@
+:root {
+  --primary-color: #181818;
+  --secondary-color: #6c757d;
+  --background-color: #f8f9fa;
+  --border-color: #dee2e6;
+  --heading-color: #333;
+  --text-color: #555;
+  --text-color2: #fff;
+  --box-color: #1e201e;
+  --box-hover-color: #3c3d37;
+  --box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  --box-shadow2: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: var(--text-color2);
+  box-shadow: var(--box-shadow2);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+/* Logo styling */
+.logo a {
+  color: var(--heading-color);
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* Navigation links container */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+}
+
+/* Individual navigation link */
+.nav-links a {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: var(--secondary-color);
+}
+
+.nav-links a.active {
+  color: var(--secondary-color);
+  border-bottom: 2px solid var(--secondary-color);
+}
+
+.dark-mode-toggle {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+  background: var(--box-hover-color);
+  color: var(--text-color2);
+  border: none;
+  border-radius: 5px;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.dark-mode-toggle:hover {
+  background: var(--box-color);
+}
+
+/* Responsive styles for smaller screens */
+@media (max-width: 768px) {
+  .nav-links {
+    flex-direction: column;
+    display: none;
+    position: absolute;
+    top: 50px;
+    right: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: var(--box-shadow2);
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+}
+
+/* Hamburger menu button */
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: var(--text-color);
+  cursor: pointer;
+}
+
+/* Show hamburger button on smaller screens */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    display: none;
+    position: absolute;
+    top: 50px;
+    right: 20px;
+    /* background-color: #333; */
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: var(--box-shadow2);
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+}
