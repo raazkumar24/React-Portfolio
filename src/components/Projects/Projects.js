@@ -1,10 +1,16 @@
-import React from 'react';
-import { useEffect } from 'react';
-import AOS from "aos";
-import "aos/dist/aos.css";
+import React, { useState, useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import './Projects.css';
 
 const Projects = () => {
+    const [projects] = useState([
+        { title: 'Landing Page', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed rutrum...', image: 'https://via.placeholder.com/300x200?text=Project+1' },
+        { title: 'Portifolio', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed rutrum...', image: 'https://via.placeholder.com/300x200?text=Project+2' },
+        { title: 'Responsive Website', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed rutrum...', image: 'https://via.placeholder.com/300x200?text=Project+3' },
+        { title: 'E-commerce', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed rutrum...', image: 'https://via.placeholder.com/300x200?text=Project+4' },
+    ]);
+
     useEffect(() => {
         AOS.init({
             duration: 1000,
@@ -22,12 +28,12 @@ const Projects = () => {
             </div>
 
             <div className="projects-container">
-                {Array(6).fill(null).map((_, index) => (
+                {projects.map((project, index) => (
                     <div className="project-card" data-aos="fade-up" key={index}>
-                        <img src={`https://via.placeholder.com/300x200?text=Project+${index + 1}`} alt={`Project ${index + 1}`} />
+                        <img src={project.image} alt={project.title} />
                         <div className="project-details">
-                            <h2>Project Title {index + 1}</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed rutrum...</p>
+                            <h2>{project.title}</h2>
+                            <p>{project.description}</p>
                             <a href="#" target="_blank" rel="noopener noreferrer" className="view-project-btn">
                                 View Project
                             </a>

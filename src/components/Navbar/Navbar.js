@@ -49,9 +49,6 @@ const Navbar = () => {
             <div className="logo">
                 <NavLink to="/">MyPortfolio</NavLink>
             </div>
-            <button className="hamburger" onClick={toggleMenu}>
-                ☰
-            </button>
             <ul className={`nav-links ${isOpen ? 'active' : ''}`}>
                 <li><NavLink to="/" onClick={() => setIsOpen(false)} end>Home</NavLink></li>
                 <li><NavLink to="/about" onClick={() => setIsOpen(false)}>About</NavLink></li>
@@ -64,6 +61,9 @@ const Navbar = () => {
                 aria-label="Toggle dark mode"
             >
                 {isDarkMode ? '🌞' : '🌙'}
+            </button>
+            <button className="hamburger" onClick={toggleMenu}>
+                ☰
             </button>
         </nav>
     );

@@ -6,9 +6,22 @@
 }
 
 body {
-  font-family: "Arial", sans-serif;
+  font-family: "Poppins", sans-serif;
   background-color: var(--background-color);
   color: var(--text-color);
+}
+
+/* CSS Variables */
+:root {
+  --background-color: #1e2228;
+  --text-color: #fff;
+  --text-color2: #000;
+  --heading-color: #f1c40f;
+  --secondary-color: #bdc3c7;
+  --border-color: #7f8c8d;
+  --primary-color: #3498db;
+  --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  --box-hover-color: #2980b9;
 }
 
 /* Projects Section */
@@ -40,7 +53,7 @@ body {
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 20px;
   align-items: center;
-  justify-content: center;
+  justify-items: center;
 }
 
 /* Project Card */
@@ -52,6 +65,9 @@ body {
   box-shadow: var(--box-shadow);
   transition: transform 0.3s ease, box-shadow 0.3s ease,
     background-color 0.3s ease;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.5s ease forwards;
 }
 
 .project-card:hover {
@@ -95,8 +111,20 @@ body {
 }
 
 .view-project-btn:hover {
-  background: var(--box-hover-color);
+  background: linear-gradient(45deg, #6dd5ed, #2193b0);
   transform: scale(1.05);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Responsive Design */
@@ -115,5 +143,29 @@ body {
 
   .project-details h2 {
     font-size: 1.3rem;
+  }
+
+  .view-project-btn {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .projects-container {
+    grid-template-columns: 1fr;
+  }
+
+  .project-card img {
+    height: 120px;
+  }
+
+  .project-details h2 {
+    font-size: 1.1rem;
+  }
+
+  .view-project-btn {
+    padding: 8px 16px;
+    font-size: 0.9rem;
   }
 }
