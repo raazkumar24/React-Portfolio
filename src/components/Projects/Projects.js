@@ -3,12 +3,15 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import './Projects.css';
 
+import projectImg from '../../assets/project-img.png';
+
+
+
 const Projects = () => {
     const [projects] = useState([
-        { title: 'Landing Page', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed rutrum...', image: 'https://via.placeholder.com/300x200?text=Project+1' },
-        { title: 'Portifolio', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed rutrum...', image: 'https://via.placeholder.com/300x200?text=Project+2' },
-        { title: 'Responsive Website', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed rutrum...', image: 'https://via.placeholder.com/300x200?text=Project+3' },
-        { title: 'E-commerce', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed rutrum...', image: 'https://via.placeholder.com/300x200?text=Project+4' },
+        { title: 'Landing Page', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed rutrum...', image: projectImg },
+        { title: 'Portifolio', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed rutrum...', image: projectImg },
+        { title: 'Responsive Website', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed rutrum...', image: projectImg }
     ]);
 
     useEffect(() => {
@@ -34,7 +37,7 @@ const Projects = () => {
                         <div className="project-details">
                             <h2>{project.title}</h2>
                             <p>{project.description}</p>
-                            <a href="#" target="_blank" rel="noopener noreferrer" className="view-project-btn">
+                            <a href="#github" target="_blank" rel="noopener noreferrer" className="view-project-btn">
                                 View Project
                             </a>
                         </div>
